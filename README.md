@@ -1,2 +1,1 @@
-Attempts to implement similar functions that the official [ESCRS Calculator](https://iolcalculator.escrs.org/) is capable of, with added csv support.
-
+Browser automation to make it easier to write into the IOL calculator provided by [ECRS](https://iolcalculator.escrs.org/).
