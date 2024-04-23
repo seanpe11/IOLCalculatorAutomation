@@ -1,7 +1,5 @@
 import tkinter as tk
-from driver import XLSXReader
-
-
+from reader import XLSXReader
 
 root = tk.Tk()
 root.title("XLSX Reader")

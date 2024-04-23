@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
+from browser import run_ecrs
 
 class XLSXReader:
     def __init__(self, root):
@@ -54,7 +55,7 @@ class XLSXReader:
             row_values = self.df.iloc[self.current_row].values
             self.row_label.config(text=f"Row {self.current_row+1}: {row_values}")
 
-    def create_input_boxes(self):
+   def create_input_boxes(self):
         for widget in self.input_frame.winfo_children():
             widget.destroy()
         self.entries = []
