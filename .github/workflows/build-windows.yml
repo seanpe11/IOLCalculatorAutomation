@@ -25,8 +25,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # selenium resolves its browser backends lazily via importlib, so
+      # PyInstaller's static analysis misses them. --collect-all pulls in the
+      # hidden submodules AND the bundled selenium-manager.exe that fetches
+      # chromedriver at runtime. openpyxl is likewise imported by name by pandas.
       - name: Build one-file EXE
-        run: pyinstaller --onefile --windowed --name IOLCalculator main.py
+        run: >
+          pyinstaller --onefile --windowed
+          --collect-all selenium
+          --hidden-import openpyxl
+          --name IOLCalculator main.py
 
       # Lets you download and test the build from the Actions run
       # without having to cut a release first.
