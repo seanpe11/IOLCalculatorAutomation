@@ -11,7 +11,7 @@ Browser automation to make it easier to write into the IOL calculator provided b
 5. Complete the CAPTCHA yourself and submit on the website. The autofill does not do this for you.
 6. Type the results into the boxes at the top, then click **Save Changes**.
 
-![The XLSX Reader window](assets/reader-window.png)
+![The reader window on the right, with the row autofilled into the ESCRS form on the left](assets/reader-window.png)
 
 ## Your spreadsheet
 
