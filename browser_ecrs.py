@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class BrowserECRS:
     def __init__(self):
-        self.driver = webdriver.Firefox()  # or webdriver.Chrome()
+        self.driver = webdriver.Chrome()  # or webdriver.Chrome()
         self.driver.get('https://iolcalculator.escrs.org/')
 
     def autofill(self, item):
@@ -22,6 +22,7 @@ class BrowserECRS:
         k2 = cast(str, item.get('K2'))
         wtw = cast(str, item.get('WTW'))
         a_const = cast(str, item.get('A-consant'))
+        pearl_const = cast(str, item.get('Pearl-A'))
         surgeon_name = "TEST"
 
         def scroll_into_view(element):
@@ -53,6 +54,8 @@ class BrowserECRS:
         scroll_and_input(k2El, k2)
         a_constEl = self.driver.find_element(By.XPATH, "//label[contains(text(), 'Hill-RBF A-Constant')]/preceding-sibling::div/input")
         scroll_and_input(a_constEl, a_const)
+        pearl_constEl = self.driver.find_element(By.XPATH, "//label[contains(text(), 'Pearl DGS A-Constant')]/preceding-sibling::div/input")
+        scroll_and_input(pearl_constEl, pearl_const)
 
         # special cases
         target_el = self.driver.find_element(By.XPATH, "//label[contains(text(), 'Target Refraction')]/preceding-sibling::div/input")
