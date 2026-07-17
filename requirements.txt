@@ -1,0 +1,6 @@
+pandas>=2.0
+selenium>=4.20
+openpyxl>=3.1.5
+
+# build-only (standalone EXE)
+pyinstaller>=6.6
